@@ -1,0 +1,10 @@
+tooling:
+  migrate-import:
+    service: appserver
+    cmd: /app/scripts/migrate/import
+  migrate-reroll:
+    service: appserver
+    cmd: /app/scripts/migrate/reroll
+  migrate-reset:
+    service: appserver
+    cmd: /app/scripts/migrate/reset

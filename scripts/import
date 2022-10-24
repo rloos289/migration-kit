@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+## Import the config for a migration
+
+set -e
+MIGRATE_PATH="modules/custom/custom_migration_module"
+
+if [ -z "$*" ]; then
+  echo -e "${green} Importing config for $MIGRATE_PATH module ${NC}";
+  SOURCE="$MIGRATE_PATH/config/install"
+else
+  echo -e "${green} Importing config $1 module"
+  SOURCE="$MIGRATE_PATH/$1/config/install"
+fi
+
+echo ${SOURCE}
+
+drush cim -y --partial --source=${SOURCE}
